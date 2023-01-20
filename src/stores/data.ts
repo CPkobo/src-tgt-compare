@@ -30,9 +30,9 @@ export const useData = defineStore('data', {
     actions: {
         execDiff() {
             this.sm.setSeqs(this.srcOld, this.srcNew)
-            this.srcDiff = this.sm.applyOpcodes(true)
+            this.srcDiff = this.sm.applyOpcodes(false)
             this.sm.setSeqs(this.tgtOld, this.tgtNew)
-            this.tgtDiff = this.sm.applyOpcodes(true)
+            this.tgtDiff = this.sm.applyOpcodes(false)
             this.hasResult = true
         }
     }
