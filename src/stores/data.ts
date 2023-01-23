@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { SequenceMatcher } from '../../difflib/src/sequenceMatcher'
+import { htmlData } from './template'
 
 interface TextsStore {
     srcOld: string
@@ -34,6 +35,14 @@ export const useData = defineStore('data', {
             this.sm.setSeqs(this.tgtOld, this.tgtNew)
             this.tgtDiff = this.sm.applyOpcodes(false)
             this.hasResult = true
+        },
+        createHtml() {
+            if (this.hasResult === false) {
+                this.execDiff()
+            }
+            const htmlText =
+                htmlData.replace('<!-- SOURCE -->', this.srcDiff).replace('<!-- TARGET -->', this.tgtDiff)
+            return htmlText
         }
     }
 })

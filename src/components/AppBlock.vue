@@ -1,13 +1,13 @@
 <template>
     <div>
-        <CompareTab />
-        <ResultTab v-if="data.hasResult" />
+        <CompareSection />
+        <ResultSection v-if="data.hasResult" />
     </div>
 </template>
 
 <script setup lang="ts">
-import CompareTab from './CompareTab.vue';
-import ResultTab from './ResultTab.vue';
+import CompareSection from './CompareSection.vue';
+import ResultSection from './ResultSection.vue';
 import { useData } from '@/stores/data';
 
 const data = useData()

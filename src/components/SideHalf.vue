@@ -1,15 +1,9 @@
 <template>
     <div class="compare-sub">
-        <a-split direction="vertical">
-            <template #first>
-                <a-divider orientation="center">OLD</a-divider>
-                <TextSet :is-src="isSrc" :is-old="true" />
-            </template>
-            <template #second>
-                <a-divider orientation="center">NEW</a-divider>
-                <TextSet :is-src="isSrc" :is-old="false" />
-            </template>
-        </a-split>
+        <a-divider orientation="center">OLD</a-divider>
+        <TextSet :is-src="isSrc" :is-old="true" />
+        <a-divider orientation="center">NEW</a-divider>
+        <TextSet :is-src="isSrc" :is-old="false" />
     </div>
 </template>
 
