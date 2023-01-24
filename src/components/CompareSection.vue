@@ -34,7 +34,6 @@ const execDiff = () => {
 
 const download = () => {
     const htmlText = data.createHtml()
-    console.log(htmlText)
     const blob = new Blob([htmlText], { type: 'text/html' });
     const link = document.createElement('a')
     link.download = `${fileName.value}.html`
